@@ -33,7 +33,7 @@ module Ckeditor
 
       def render(input)
         output_buffer << input
-        output_buffer << javascript_tag(Utils.js_replace(options['id'], ck_options))
+        output_buffer << javascript_tag(Utils.js_replace(options['id'], ck_options)) unless ck_options['manual_instantiation']
         output_buffer
       end
 
